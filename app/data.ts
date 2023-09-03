@@ -1,5 +1,9 @@
 export const Languages: ProgrammingLanguage[] = [
   {
+    label: "Plain Text",
+    value: "plain_text",
+  },
+  {
     label: "JavaScript",
     value: "javascript",
   },
@@ -74,6 +78,10 @@ export const Languages: ProgrammingLanguage[] = [
   {
     label: "Dockerfile",
     value: "dockerfile",
+  },
+  {
+    label: "Plain Text",
+    value: "plain_text",
   },
 ];
 

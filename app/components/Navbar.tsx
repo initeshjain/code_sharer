@@ -7,7 +7,7 @@ function Navbar() {
     <div className="flex items-center justify-between p-1 px-3 md:px-10 shadow-sm border-b-[1px] sticky top-0 bg-white dark:bg-black dark:text-white z-10">
       <Link href="/" className="flex items-center gap-2">
         <CodeBracketIcon className="h-8 w-8" aria-hidden="true" />
-        <span>code.googgle.in</span>
+        <span>share any text</span>
       </Link>
       <div className="flex gap-4">
         <Link

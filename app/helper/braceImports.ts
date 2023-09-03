@@ -18,7 +18,7 @@ import "brace/mode/css";
 import "brace/mode/html";
 import "brace/mode/dart";
 import "brace/mode/dockerfile";
-import "brace/mode/text";
+import "brace/mode/plain_text";
 
 // themes
 import "brace/theme/dracula";
