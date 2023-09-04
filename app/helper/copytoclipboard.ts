@@ -1,4 +1,4 @@
-export default function copyToClipboard(text) {
+export default function copyToClipboard(text: string) {
   // Create a temporary textarea element
   const textArea = document.createElement("textarea");
   textArea.value = text;
