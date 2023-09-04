@@ -2,6 +2,8 @@
 
 import { FC, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import copyToClipboard from "../helper/copytoclipboard";
+import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 
 const Modal: FC<ModalProps> = ({ isError, shortResponse }) => {
   return (
@@ -39,11 +41,33 @@ const Modal: FC<ModalProps> = ({ isError, shortResponse }) => {
                     >
                       copy any url from below and share
                     </Dialog.Title>
-                    <div className="mt-2">
-                      <ul className="text-sm text-gray-500 dark:text-gray-300 flex flex-col gap-2">
-                        <li>{shortResponse.full_short_link}</li>
-                        <li>{shortResponse.full_short_link2}</li>
-                      </ul>
+                    <div className="mt-2 text-sm text-gray-500 dark:text-gray-300 flex flex-col gap-2">
+                      <div className="flex gap-2 items-center">
+                        <div>{shortResponse.full_short_link}</div>
+                        <button
+                          onClick={() => {
+                            copyToClipboard(shortResponse.full_short_link);
+                          }}
+                        >
+                          <DocumentDuplicateIcon
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        </button>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <div>{shortResponse.full_short_link2}</div>
+                        <button
+                          onClick={() => {
+                            copyToClipboard(shortResponse.full_short_link2);
+                          }}
+                        >
+                          <DocumentDuplicateIcon
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        </button>
+                      </div>
                     </div>
 
                     <div className="mt-4">
