@@ -79,10 +79,6 @@ export const Languages: ProgrammingLanguage[] = [
     label: "Dockerfile",
     value: "dockerfile",
   },
-  {
-    label: "Plain Text",
-    value: "plain_text",
-  },
 ];
 
 export const Expiries: ExpiryDate[] = [
@@ -113,5 +109,9 @@ export const Expiries: ExpiryDate[] = [
   {
     label: "24 Hours",
     value: "24h",
+  },
+  {
+    label: "Never",
+    value: "never"
   },
 ];

@@ -37,6 +37,11 @@ export const createSnippet = async (
 };
 
 function calculateExpiry(currentTime: Date, expiry: string): Date {
+
+  if (expiry === "never") {
+    return new Date(9999, 11, 31);
+  }
+
   const timeMultiplier: { [key: string]: number } = {
     "15m": 15 * 60 * 1000,
     "30m": 30 * 60 * 1000,
@@ -48,9 +53,7 @@ function calculateExpiry(currentTime: Date, expiry: string): Date {
   };
 
   const expiryMillis = timeMultiplier[expiry];
-  const expiryTime = new Date(currentTime.getTime() + expiryMillis);
-
-  return expiryTime;
+  return new Date(currentTime.getTime() + expiryMillis);
 }
 
 function encodeWithKey(data: string, key: string): string {
