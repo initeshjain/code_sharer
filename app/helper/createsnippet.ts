@@ -21,7 +21,7 @@ export const createSnippet = async (
     try {
       const parsedEncodedData = encodeURIComponent(encodedData);
       const HOST: string =
-        process.env.NEXT_PUBLIC_HOST || "https://code.googgle.in";
+        process.env.NEXT_PUBLIC_HOST || "https://code.noobgeek.in";
       const ShortnerHost: string = "https://api.shrtco.de/v2";
       const response: Response = await fetch(
         `${ShortnerHost}/shorten?url=${HOST}/snippet?s=${parsedEncodedData}`
