@@ -39,3 +39,9 @@ type ModalProps = {
   isError: boolean;
   shortResponse: ShortResponse;
 };
+
+type ReqOptions = {
+  method: string;
+  headers: Header;
+  body: string;
+}

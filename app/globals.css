@@ -12,6 +12,11 @@ body,
 html {
   height: 100vh;
 }
+
+body {
+  cursor: url('./cursor.png'), auto;
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

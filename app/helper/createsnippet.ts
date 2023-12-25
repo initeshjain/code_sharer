@@ -22,11 +22,19 @@ export const createSnippet = async (
       const parsedEncodedData = encodeURIComponent(encodedData);
       const HOST: string =
         process.env.NEXT_PUBLIC_HOST || "https://code.noobgeek.in";
-      const ShortnerHost: string = "https://api.shrtco.de/v2";
-      const response: Response = await fetch(
-        `${ShortnerHost}/shorten?url=${HOST}/snippet?s=${parsedEncodedData}`
-      );
+      const ShortnerHost: string = "https://api.dub.co/links?projectSlug=tiktook-in";
+
+      const Destination_URL = `${HOST}/snippet?s=${parsedEncodedData}`
+
+      const options: ReqOptions = {
+        method: 'POST',
+        headers: { Authorization: process.env.DUB_API_KEY, 'Content-Type': 'application/json' },
+        body: `{"domain":"tiktook.in","url":${Destination_URL}}`
+      };
+
+      const response: Response = await fetch(ShortnerHost, options);
       const data = await response.json();
+      console.log("data => ", data)
       return data;
     } catch (e) {
       return null;
