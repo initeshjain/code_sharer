@@ -22,14 +22,14 @@ export const createSnippet = async (
       const parsedEncodedData = encodeURIComponent(encodedData);
       const HOST: string =
         process.env.NEXT_PUBLIC_HOST || "https://code.noobgeek.in";
-      const ShortnerHost: string = "https://api.dub.co/links?projectSlug=tiktook-in";
+      const ShortnerHost: string = "https://ulvis.net/api/write/post";
 
       const Destination_URL = `${HOST}/snippet?s=${parsedEncodedData}`
 
       const options: ReqOptions = {
         method: 'POST',
-        headers: { Authorization: process.env.DUB_API_KEY, 'Content-Type': 'application/json' },
-        body: `{"domain":"tiktook.in","url":${Destination_URL}}`
+        headers: { 'Content-Type': 'application/json' },
+        body: `{"url":${Destination_URL}}`
       };
 
       const response: Response = await fetch(ShortnerHost, options);
